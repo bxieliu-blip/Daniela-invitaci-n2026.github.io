@@ -24,21 +24,14 @@
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/animatecss/3.5.2/animate.min.css">
 		<link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
 		<link href="css/style.css?v=01" rel="stylesheet" type="text/css"/>
-
         <!-- Favicon -->
-        <link rel="shortcut icon" href="icon.png">
+        <link rel="shortcut icon" href="img/icon.png">
 		</head>
-	
-<!--Audio-->
-<div id="contenedorPlay" class="aparecer-audio" onclick="controlarAudio('play')">
-    <img src="img/principal.gif" alt="Reproducir" style="width: 60px; height: auto;">
-</div>
-<div id="contenedorPausa" class="pausa01" onclick="controlarAudio('pausa')">
-    <img src="img/principal.gif" alt="Pausar" style="width: 60px; height: auto; filter: grayscale(100%);">
-</div>
-<audio id="audioPrincipal" src="tu-audio.mp3"></audio>
-<!--Audio-->
-		
+
+		<!--audio-->
+		<audio id="audioOculto" src="badlove.wav" autoplay loop></audio>
+	<!--audio-->
+
     <body style="background-color: #f5e4e1;">
 	<h1 style="display: none;">Invitaciones digitales</h1>
 <!-- Sobre -->
@@ -373,12 +366,13 @@
 									<div class="owl-item cloned" style="width: 397.078px; margin-right: 10px;"><div><img src="img/carousel/03.jpg" width="100%" alt="">
 									</div>
 								</div>
-								<div class="owl-item cloned" style="width: 397.078px; margin-right: 10px;"><div><img src="img/carousel/02.jpg" width="100%" alt="">
+								<div class="owl-item cloned" style="width: 397.078px; margin-right: 10px;"><div><img src="img/carousel/04.jpg" width="100%" alt="">
 									</div>
 								</div>
 								<div class="owl-item active" style="width: 397.078px; margin-right: 10px;">
 									<div>
 										<img src="img/carousel/01.jpg" width="100%" alt=""></div></div><div class="owl-item" style="width: 397.078px; margin-right: 10px;"><div>
+										<img src="img/carousel/03.jpg" width="100%" alt=""></div></div><div class="owl-item" style="width: 397.078px; margin-right: 10px;"><div>
 										<img src="img/carousel/01.jpg" width="100%" alt=""></div></div><div class="owl-item cloned" style="width: 397.078px; margin-right: 10px;"><div>
 										<img src="img/carousel/02.jpg" width="100%" alt=""></div></div></div></div>
 										<div class="owl-nav disabled">
@@ -474,25 +468,6 @@
 
 	</section>
 	<!--Footer-->
-        <!--Audio-->
-		<script>
-    const audio = document.getElementById("audioPrincipal");
-    const btnPlay = document.getElementById("contenedorPlay");
-    const btnPausa = document.getElementById("contenedorPausa");
-
-    function controlarAudio(accion) {
-        if (accion === 'play') {
-            audio.play();
-            btnPlay.className = "desaparecer-audio";
-            btnPausa.className = "aparecer-pausa";
-        } else if (accion === 'pausa') {
-            audio.pause();
-            btnPlay.className = "aparecer-audio";
-            btnPausa.className = "pausa01";
-        }
-    }
-</script>
-		<!--Audio-->
 
         <!-- Script -->
 		<script src="js/jquery.min.js"></script>
