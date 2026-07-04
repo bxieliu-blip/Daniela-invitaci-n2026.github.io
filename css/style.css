@@ -168,21 +168,21 @@ text-decoration: none;
 }
 .title {
 color:#af7d20;
-font-size: 52px;
+font-size: 80px;
 font-family: "Titles";
 }
 
 .title-2 {
   color:#000;
   font-family: Titles;
-  font-size: 60px;
+  font-size: 80px;
   font-family: "Blacksword" !important;
   line-height: .8;
   }
 
 .fecha{
   font-family: "Billion Miracles";
-  font-size: 28px;
+  font-size: 48px;
   color:#000;
 }
 .mes{
@@ -209,7 +209,7 @@ p{
 .nombre-foto {
 color:#f19191;
 font-family: Aston Script;
-font-size: 36px;
+font-size: 56px;
 text-transform: uppercase;
 font-weight:700;
 letter-spacing: 2px;
@@ -292,7 +292,7 @@ margin-bottom: 0;
   opacity: 1;
   }
 .font-18 {
-font-size: 38px;
+font-size: 48px;
 }
 .sombra { 
 text-shadow: #000 0.2em 0.2em 0.3em;
@@ -320,7 +320,7 @@ left: 0;
 right: 0;
 margin: auto;
 bottom:20px;
-font-size: 30px; align-content: center
+font-size: 50px; align-content: center
 }
 span.letra{
       position: absolute;
@@ -335,7 +335,7 @@ border: 1px solid #fad7f8;
 color:#fff;
 transition-duration: .2s;
 text-transform: uppercase;
-font-size:38px;
+font-size:48px;
 font-family: Silhouette;
 letter-spacing: 1px;
 cursor: pointer;
