@@ -27,18 +27,23 @@
         <!-- Favicon -->
         <link rel="shortcut icon" href="img/icon.png">
 		</head>
-
-		<!--audio-->
-		<audio id="audioOculto" src="badlove.wav" autoplay loop></audio>
-	<!--audio-->
+<!--Audio-->
+<img="audio.png" aling="center" alt="Reproducir música" onclick="alternarReproduccion()">
+<audio id="miCancion">
+    <source src="badlove.wav" type="audio/wav">
+    Tu navegador no soporta este elemento de audio.
+</audio>
+<!--Audio-->
+		
 
     <body style="background-color: #f5e4e1;">
+
 	<h1 style="display: none;">Invitaciones digitales</h1>
 <!-- Sobre -->
 	<section id="carta" style="background-color: #f9efef; padding: 0;">
 		<a id="btn" style="cursor: pointer;" target="_self" onclick="funciones()"/>
 			<span class="texto-sello">¡Abre aquí!</span>
-			<span align="center" class="boton-sobre"><img src="img/sello.png" width="100" alt="Invitación digital"></span>
+			<span align="center" class="boton-sobre"><img src="img/sello.png" width="100" alt="MingLi"></span>
 		</a>
 
 		<div class="container">
@@ -479,6 +484,7 @@
 		<script type="text/javascript" src="js/timer.js"></script>
 		<script src="https://kit.fontawesome.com/b98bb5e7f7.js" crossorigin="anonymous" defer></script>
 		<script src="js/wow.js"></script>
+
   <script>
     wow = new WOW(
       {
@@ -496,6 +502,17 @@
       this.parentNode.insertBefore(section, this);
     };
   </script>
+
+  <script>
+function alternarReproduccion() {
+    var cancion = document.getElementById("miCancion");
+    if (cancion.paused) {
+        cancion.play();
+    } else {
+        cancion.pause();
+    }
+}
+</script>
 
 		 <script>
             $(document).ready(function() {
@@ -644,6 +661,10 @@ function pauseVid() {
 
 		}
 		</script>
+		<script>
+			#miAudio {display: none;}
+			</script>
+
 		<script language="javascript">
 		document.oncontextmenu = function(){return false}
 		</script>
