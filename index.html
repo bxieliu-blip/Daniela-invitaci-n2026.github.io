@@ -27,12 +27,15 @@
         <!-- Favicon -->
         <link rel="shortcut icon" href="img/icon.png">
 
-
 		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maxium-scale=1.0, minium-escale=1.0">
+
 		</head>
+   
+
+
 <!--Audio-->
 <img="audio.png" aling="center" alt="Reproducir música" onclick="alternarReproduccion()">
-<audio id="miCancion">
+<audio id="miCancion" loop>
     <source src="badlove.wav" type="audio/wav">
     Tu navegador no soporta este elemento de audio.
 </audio>
@@ -40,6 +43,7 @@
 		
 
     <body style="background-color: #f5e4e1;">
+
 	<h1 style="display: none;">Invitaciones digitales</h1>
 <!-- Sobre -->
 	<section id="carta" style="background-color: #f9efef; padding: 0;">
@@ -461,7 +465,7 @@
 
 						<div class="col-md-8 col-12">
 
-							<a href="#popup3" target="_self"><p align="center" style="color: #141414; margin: 0; font-size: 12px; padding-top: 5px;">Todos los derechos reservados © <script>document.write(new Date().getFullYear());</script>Min MinXi.</p></a>
+							<a href="#popup3" target="_self"><p class="secundario" align="center" style="color: #141414; margin: 0; font-size: 12px; padding-top: 5px;">Todos los derechos reservados © <script>document.write(new Date().getFullYear());</script>Min MinXi.</p></a>
 
 						</div>
 
@@ -475,6 +479,7 @@
 
 	</section>
 	<!--Footer-->
+
 
         <!-- Script -->
 		<script src="js/jquery.min.js"></script>
@@ -677,7 +682,52 @@ function pauseVid() {
 						bankDetails.classList.add('hidden');
 					}
 				});
-			</script>
+			</script>	
+
+<!--mariposa-->
+  <div id="lluvia-musical"></div>
+  <script>
+  function crearLluviaMusical() {
+    const contenedor = document.getElementById('lluvia-musical');
+    const notasSimbolos = ['♩', '♪', '♫', '♬', '𝄢', '𝄞'];
+    const cantidadNotas = 40; // Cambia este número para aumentar o disminuir la densidad de la lluvia
+
+    // Tonos azul marfil combinados para las notas musicales
+    const coloresNotas = ['#00d2ff', '#fffdf4', '#e0f2fe', '#06b6d4'];
+
+    for (let i = 0; i < cantidadNotas; i++) {
+      const nota = document.createElement('div');
+      nota.className = 'nota-musical';
+      
+      // Seleccionar símbolo, color y propiedades aleatorias
+      nota.innerText = notasSimbolos[Math.floor(Math.random() * notasSimbolos.length)];
+      nota.style.color = coloresNotas[Math.floor(Math.random() * coloresNotas.length)];
+      
+      const tamaño = 14 + Math.random() * 22; // Tamaños de 14px a 36px
+      const inicioX = Math.random() * 100; // Posición horizontal de inicio (0% a 100% del ancho)
+      const retraso = Math.random() * -20; // Aparecen dispersas inmediatamente al cargar
+      const duracion = 8 + Math.random() * 10; // Velocidad de caída (8 a 18 segundos)
+      const opacidad = 0.4 + Math.random() * 0.5; // Transparencia suave y mística
+
+      // Aplicar estilos individuales
+      nota.style.fontSize = `${tamaño}px`;
+      nota.style.left = `${inicioX}vw`;
+      nota.style.animationDelay = `${retraso}s`;
+      nota.style.animationDuration = `${duracion}s`;
+      nota.style.opacity = opacidad;
+
+      // Movimiento de balanceo lateral personalizado por nota
+      const balanceo = 30 + Math.random() * 50;
+      nota.style.setProperty('--balanceoX', `${balanceo}px`);
+
+      contenedor.appendChild(nota);
+    }
+  }
+
+  window.addEventListener('DOMContentLoaded', crearLluviaMusical);
+</script>
+
+<!--mariposas-->
 </body>
     <!-- End Body -->
 </html>
