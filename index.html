@@ -26,7 +26,7 @@
 		<link href="css/style.css?v=01" rel="stylesheet" type="text/css"/>
         <!-- Favicon -->
         <link rel="shortcut icon" href="img/icon.png">
-
+        <meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maxium-scale=1.0, minium-escale=1.0">
 
 		</head>
@@ -684,50 +684,11 @@ function pauseVid() {
 				});
 			</script>	
 
-<!--mariposa-->
+<!--notas musicales-->
   <div id="lluvia-musical"></div>
-  <script>
-  function crearLluviaMusical() {
-    const contenedor = document.getElementById('lluvia-musical');
-    const notasSimbolos = ['♩', '♪', '♫', '♬', '𝄢', '𝄞'];
-    const cantidadNotas = 40; // Cambia este número para aumentar o disminuir la densidad de la lluvia
 
-    // Tonos azul marfil combinados para las notas musicales
-    const coloresNotas = ['#00d2ff', '#fffdf4', '#e0f2fe', '#06b6d4'];
-
-    for (let i = 0; i < cantidadNotas; i++) {
-      const nota = document.createElement('div');
-      nota.className = 'nota-musical';
-      
-      // Seleccionar símbolo, color y propiedades aleatorias
-      nota.innerText = notasSimbolos[Math.floor(Math.random() * notasSimbolos.length)];
-      nota.style.color = coloresNotas[Math.floor(Math.random() * coloresNotas.length)];
-      
-      const tamaño = 14 + Math.random() * 22; // Tamaños de 14px a 36px
-      const inicioX = Math.random() * 100; // Posición horizontal de inicio (0% a 100% del ancho)
-      const retraso = Math.random() * -20; // Aparecen dispersas inmediatamente al cargar
-      const duracion = 8 + Math.random() * 10; // Velocidad de caída (8 a 18 segundos)
-      const opacidad = 0.4 + Math.random() * 0.5; // Transparencia suave y mística
-
-      // Aplicar estilos individuales
-      nota.style.fontSize = `${tamaño}px`;
-      nota.style.left = `${inicioX}vw`;
-      nota.style.animationDelay = `${retraso}s`;
-      nota.style.animationDuration = `${duracion}s`;
-      nota.style.opacity = opacidad;
-
-      // Movimiento de balanceo lateral personalizado por nota
-      const balanceo = 30 + Math.random() * 50;
-      nota.style.setProperty('--balanceoX', `${balanceo}px`);
-
-      contenedor.appendChild(nota);
-    }
-  }
-
-  window.addEventListener('DOMContentLoaded', crearLluviaMusical);
-</script>
-
-<!--mariposas-->
+  <script src="js/lluvia-musical.js"></script>
+<!--notas musicales-->
 </body>
     <!-- End Body -->
 </html>

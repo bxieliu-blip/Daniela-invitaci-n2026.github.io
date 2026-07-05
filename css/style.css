@@ -17,6 +17,45 @@ src: url(../fonts/Aston-Script.ttf);
   font-family: "AllrounderMonument";
   src: url(../fonts/AllrounderMonumentTest-Book.otf);
   }
+
+
+@media (max-width: 768px) {
+  /* Reduce el tamaño base de la mariposa para que no ocupe demasiado espacio */
+  .mariposa {
+    width: 45px;
+    height: 38px;
+  }
+  
+  .cuerpo {
+    width: 4px;
+    height: 30px;
+    left: 20px;
+    top: 4px;
+  }
+
+  .ala {
+    width: 22px;
+    height: 36px;
+    border-width: 2.5px; /* Bordes más finos proporcionales */
+  }
+
+  .ala-derecha {
+    right: 0;
+  }
+
+  /* Reduce el rango de los tamaños de las notas musicales en celulares */
+  .nota-musical {
+    font-size: 12px !important; /* Forzar tamaño sutil para pantallas pequeñas */
+  }
+
+  /* Suaviza el movimiento lateral para evitar parpadeos en navegadores móviles */
+  @keyframes caerLenta {
+    0% { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(110vh) rotate(180deg); }
+  }
+}
+
+
   .hidden {
     display: none;
 }
@@ -34,14 +73,14 @@ html {
 
 
 p, li, a {
-  font-family: "Cherolina", cursive !important;
+  font-family: "Silhouette", cursive !important;
 }
 html, html a, body {
   -webkit-font-smoothing: antialiased;
 }
 
 html {
-  font-size: 47px;
+  font-size: 24px;
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -168,21 +207,21 @@ text-decoration: none;
 }
 .title {
 color:#af7d20;
-font-size: 80px;
+font-size: 52px;
 font-family: "Titles";
 }
 
 .title-2 {
   color:#000;
   font-family: Titles;
-  font-size: 80px;
+  font-size: 60px;
   font-family: "Blacksword" !important;
   line-height: .8;
   }
 
 .fecha{
   font-family: "Billion Miracles";
-  font-size: 48px;
+  font-size: 28px;
   color:#000;
 }
 .mes{
@@ -209,7 +248,7 @@ p{
 .nombre-foto {
 color:#f19191;
 font-family: Aston Script;
-font-size: 56px;
+font-size: 36px;
 text-transform: uppercase;
 font-weight:700;
 letter-spacing: 2px;
@@ -292,7 +331,7 @@ margin-bottom: 0;
   opacity: 1;
   }
 .font-18 {
-font-size: 48px;
+font-size: 38px;
 }
 .sombra { 
 text-shadow: #000 0.2em 0.2em 0.3em;
@@ -320,7 +359,7 @@ left: 0;
 right: 0;
 margin: auto;
 bottom:20px;
-font-size: 50px; align-content: center
+font-size: 30px; align-content: center
 }
 span.letra{
       position: absolute;
@@ -335,7 +374,7 @@ border: 1px solid #fad7f8;
 color:#fff;
 transition-duration: .2s;
 text-transform: uppercase;
-font-size:48px;
+font-size:38px;
 font-family: Silhouette;
 letter-spacing: 1px;
 cursor: pointer;
@@ -919,7 +958,7 @@ background: radial-gradient(circle, rgb(255, 204, 232) 0%, rgb(255, 242, 253) 10
 
 
 .font-20 {
-font-size:20px;
+font-size:40px;
 }
 .img-absolute{
     position: absolute;
@@ -931,68 +970,56 @@ p {
   font-size: clamp(1rem, 2vw + 0.5rem, 1.25rem);
 }
 
-.contenedor-petalos {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: all;
+body {
+  overflow-x: hidden;
 }
 
-.petalo {
-  position: absolute;
-  background: linear-gradient(135deg, #b6dcff, #bfeaf5); 
-  width: 15px;
-  height: 25px;
-  border-radius: 15px 0 15px 15px;
-  opacity: 0.7;
-  animation: caer 10s linear infinite;
-}
-
-@keyframes caer {
-  0% {
-    transform: translateY(-10vh) rotate(0deg);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(110vh) rotate(360deg);
-    opacity: 0.2;
-  }
-}
-
+/* Espacio flotante invisible para la lluvia */
 #lluvia-musical {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  pointer-events: none; /* No interfiere con los clics del usuario */
-  z-index: 9998; /* Un nivel por debajo de las mariposas para dar profundidad */
+  pointer-events: none; /* Permite al usuario hacer clic en la web normalmente */
+  z-index: 9999; /* Se mantiene por encima del contenido */
   overflow: hidden;
 }
 
 .nota-musical {
   position: absolute;
-  top: -50px; /* Comienzan ocultas arriba de la pantalla */
+  top: -50px; /* Inician ocultas en la parte superior */
   font-family: sans-serif;
   user-select: none;
-  /* Resplandor neón suave a juego con el diseño anterior */
-  filter: drop-shadow(0 0 5px currentColor) drop-shadow(0 0 10px rgba(0, 210, 255, 0.3));
+  /* Efecto Neón: Capas de brillo con el color de la propia nota */
+  filter: drop-shadow(0 0 5px currentColor) drop-shadow(0 0 10px rgba(0, 210, 255, 0.4));
   animation: caerLenta infinite linear;
 }
 
-/* Animación que simula la caída de nieve balanceándose con el viento */
+/* Animación de caída tipo nieve con balanceo lateral */
 @keyframes caerLenta {
   0% {
     transform: translateY(0) rotate(0deg) translateX(0);
   }
   50% {
-    /* Balanceo hacia la derecha en la mitad de la caída */
     transform: translateY(50vh) rotate(180deg) translateX(var(--balanceoX));
   }
   100% {
-    /* Termina abajo de la pantalla regresando al eje */
     transform: translateY(110vh) rotate(360deg) translateX(0);
+  }
+}
+
+/* ========================================================
+   ADAPTACIÓN PARA PANTALLAS DE CELULARES (MEDIA QUERY)
+   ======================================================== */
+@media (max-width: 768px) {
+  .nota-musical {
+    /* Fuerza una escala pequeña fija en móviles para evitar textos gigantes */
+    font-size: 13px !important; 
+  }
+  
+  @keyframes caerLenta {
+    0% { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(110vh) rotate(180deg); }
   }
 }
